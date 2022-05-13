@@ -67,11 +67,11 @@ components:
           targetPort: 3306
       env:
         - name: MARIADB_USER
-          value: petclinic
+          value: db_admin
         - name: MARIADB_PASSWORD
-          value: petclinic
+          value: db_access_2022
         - name: MARIADB_DATABASE
-          value: petclinic
+          value: db_temp
         - name: MARIADB_ALLOW_EMPTY_ROOT_PASSWORD
           value: allow
         - name: PS1
@@ -96,8 +96,8 @@ commands:
   - exec:
       commandLine: |
         mysql -u root < ${PROJECT_SOURCE}/src/main/resources/db/mysql/user.sql && \
-        mysql -u root petclinic < ${PROJECT_SOURCE}/src/main/resources/db/mysql/schema.sql && \
-        mysql -u root petclinic < ${PROJECT_SOURCE}/src/main/resources/db/mysql/data.sql && \
+        mysql -u root db_temp < ${PROJECT_SOURCE}/src/main/resources/db/mysql/schema.sql && \
+        mysql -u root db_temp < ${PROJECT_SOURCE}/src/main/resources/db/mysql/data.sql && \
         echo "\e[32mDone.\e[0m Database petclinic was configured"
       component: mariadb
       group:
