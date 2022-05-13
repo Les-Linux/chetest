@@ -3,7 +3,7 @@ metadata:
   name: com-sap-wksp-dev
   namespace: leslie-fleming-che-ft209u
 projects:
-  - name: com.elbicon.wksp.spring
+  - name: com-elbicon-wksp-spring
     zip:
       location: 'http://devfile-registry.openshift-operators.svc:8080/resources/v2/java-spring-petclinic.zip'
 components:
